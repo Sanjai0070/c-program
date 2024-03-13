@@ -1,27 +1,19 @@
-#include <stdio.h>    
-int main()    
-{    
-    int arr[] = {1, 2, 8, 3, 2, 2, 2, 5, 1};     
-    int length = sizeof(arr)/sizeof(arr[0]);      
-    int fr[length];    
-    int visited = -1;    
-        
-    for(int i = 0; i < length; i++){    
-        int count = 1;    
-        for(int j = i+1; j < length; j++){    
-            if(arr[i] == arr[j]){    
-                count++;    
-                fr[j] = visited;    
-            }    
-        }    
-        if(fr[i] != visited)    
-            fr[i] = count;    
-    }        
-    for(int i = 0; i < length; i++){    
-        if(fr[i] != visited){    
-            printf("element: %d\n", arr[i]);    
-            printf("frequency:%d\n", fr[i]);    
-        }    
-    }     
-    return 0;    
-}    
+#include<stdio.h>
+int main()
+{
+	int num[]={1,2,3,4,5,6,7,8,9};
+	int len=sizeof(num)/sizeof(num[0]);
+	int freq[256]={0},i;
+	for(i=0;i<len;i++)
+	{
+		freq[num[i]]++;
+	}
+	for(i=0;i<256;i++)
+	{
+		if(freq[i]>0)
+		{
+			printf("The frequency of %d is %d\n",i,freq[i]);
+		}
+	}
+	return 0;
+}
