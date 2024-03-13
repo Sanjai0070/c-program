@@ -6,7 +6,7 @@
                                         '-', '(', ')', '[', ']',
                                         ',', '"', '/'};
 
-        char input[256]="Surya,jk!", output[256];
+        char input[256]="Sanjai!", output[256];
         int i, j, k, ch, flag;
         i = j = k = flag = 0;
         input[strlen(input) - 1] = '\0';
