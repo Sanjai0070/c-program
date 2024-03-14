@@ -6,7 +6,7 @@ int main()
 	while(a>0)
 	{
 	rem=a%10;
-	reverse=rem*rem*rem;
+	reverse=reverse*10+rem;
 	a/=10;
 	}
 	if(ori==reverse)
