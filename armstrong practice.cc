@@ -6,7 +6,7 @@ int main()
 	while(ori>0)
 	{
 		rem=a%10;
-		result+=(result*10)+rem;
+		result+=rem*rem*rem;
 		ori/=10;
 	}
 	if(result==a)
