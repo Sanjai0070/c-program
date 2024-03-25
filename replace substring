@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+void replaceSubstring(char *original, const char *substring, const char *replacement) {
+    char newString[1000]; // Assuming a maximum length for the new string
+    char *position = strstr(original, substring);
+
+    if (position == NULL) {
+        printf("Substring not found in the original string.\n");
+        return;
+    }
+
+    int originalLength = strlen(original);
+    int substringLength = strlen(substring);
+    int replacementLength = strlen(replacement);
+    int newPosition = position - original;
+
+    strncpy(newString, original, newPosition);
+    newString[newPosition] = '\0';
+    strcat(newString, replacement);
+    strcat(newString, position + substringLength);
+
+    strcpy(original, newString);
+}
+
+int main() {
+    char originalString[1000] = "Hello, World! This is a sample string.";
+    const char *substring = "sample";
+    const char *replacement = "modified";
+
+    printf("Original String: %s\n", originalString);
+    replaceSubstring(originalString, substring, replacement);
+    printf("Modified String: %s\n", originalString);
+
+    return 0;
+}
