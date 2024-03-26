@@ -5,7 +5,7 @@ int main()
 	ori=a;
 	while(ori>0)
 	{
-		rem=a%10;
+		rem=ori%10;
 		result+=rem*rem*rem;
 		ori/=10;
 	}
