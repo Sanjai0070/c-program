@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    char str[] = "This is a sample string to find the longest word";
+    int i = 0, max_length = 0, current_length = 0;
+    int start_index = 0, max_start_index = 0;
+
+    while (str[i] != '\0') {
+        if (str[i] != ' ') {
+            current_length++;
+        } else {
+            if (current_length > max_length) {
+                max_length = current_length;
+                max_start_index = start_index;
+            }
+            current_length = 0;
+            start_index = i + 1;
+        }
+        i++;
+    }
+
+   
+    if (current_length > max_length) {
+        max_length = current_length;
+        max_start_index = start_index;
+    }
+
+    printf("The longest word is: ");
+    for (int j = max_start_index; j < max_start_index + max_length; j++) {
+        printf("%c", str[j]);
+    }
+    
+    return 0;
+}
